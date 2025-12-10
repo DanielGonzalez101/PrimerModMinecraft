@@ -20,6 +20,9 @@ public class ModBlock {
   public static final Block PINK_GARNET_BLOCK = registerBlock("pink_garnet_block",
       new Block(AbstractBlock.Settings.create().strength(4f).requiresTool().sounds(BlockSoundGroup.AMETHYST_BLOCK)));
 
+  public static final Block RAW_PINK_GARNET_BLOCK = registerBlock("raw_pink_garnet_block",
+      new Block(AbstractBlock.Settings.create().strength(4f).requiresTool().sounds(BlockSoundGroup.COPPER)));
+
   private static Block registerBlock(String name, Block block) {
     registerBlockItem(name, block);
     return Registry.register(Registries.BLOCK, Identifier.of(TutorialMod.MOD_ID, name), block);
@@ -36,6 +39,7 @@ public class ModBlock {
     // Se añade a los ingredientes
     ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
       entries.add(PINK_GARNET_BLOCK);
+      entries.add(RAW_PINK_GARNET_BLOCK);
     });
   }
 
